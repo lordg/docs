@@ -75,6 +75,12 @@ Adding data to a posts table for example would like this::
         }
     }
 
+Note: when interacting with your Models, such as inserting above, keep in mind
+you need to manage which database configuration your Model uses. Otherwise 
+Cake will load the Model with the default database configuration. So you can 
+add ``$post->useDbConfig = $this->connection;`` just after Initializing the 
+Post model.
+
 The ``before()`` and ``after()`` callbacks run each time a table is created
 or dropped on the current schema.
 
